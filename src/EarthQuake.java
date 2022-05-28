@@ -1,8 +1,9 @@
-import java.util.Date;
+import java.time.LocalDateTime;
+
 public class EarthQuake
 {
     private int ID;
-    private Date OT;
+    private LocalDateTime OT;
     private double LATITUDE;
     private double LONGITUDE;
     private double DEPTH;
@@ -13,7 +14,7 @@ public class EarthQuake
     {
         this.ID = ID;
     }
-    public void setOT(Date OT)
+    public void setOT(LocalDateTime OT)
     {
         this.OT = OT;
     }
@@ -48,7 +49,7 @@ public class EarthQuake
         return ID;
     }
 
-    public Date getOT()
+    public LocalDateTime getOT()
     {
         return OT;
     }
@@ -87,10 +88,10 @@ public class EarthQuake
         else
             s += LATITUDE + "N";
         if (LONGITUDE < 0)
-            s += ", " + (-LATITUDE) + "W";
+            s += ", " + (-LONGITUDE) + "W";
         else
-            s += ", " + LATITUDE + "E";
-        s += "Depth: " + DEPTH + "Magnitude: " + MAGNITUDE + " Region: " + REGION;
+            s += ", " + LONGITUDE + "E";
+        s += " Depth: " + DEPTH + " Magnitude: " + MAGNITUDE + " Region: " + REGION;
         return s;
     }
 

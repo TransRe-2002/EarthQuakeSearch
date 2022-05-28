@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class EarthQuakeDao extends DBDao
                 "VALUES (?,?,?,?,?,?,?)");
         //参数传递
         pS.setInt(1,eq.getID());
-        pS.setDate(2,new Date(eq.getOT().getTime()));
+        pS.setObject(2,eq.getOT());
         pS.setDouble(3,eq.getLATITUDE());
         pS.setDouble(4,eq.getLONGITUDE());
         pS.setDouble(5,eq.getDEPTH());
@@ -28,7 +29,7 @@ public class EarthQuakeDao extends DBDao
     {
         PreparedStatement pS = getConnection().prepareStatement("UPDATE EARTHQUAKE SET OT = ?, LATITUDE = ?, LONGITUDE = ?, DEPTH = ?, MAGNITUDE = ?, REGION = ? WHERE ID = ?");
         //参数传递
-        pS.setDate(1,new Date(eq.getOT().getTime()));
+        pS.setObject(1,eq.getOT());
         pS.setDouble(2,eq.getLATITUDE());
         pS.setDouble(3,eq.getLONGITUDE());
         pS.setDouble(4,eq.getDEPTH());
@@ -62,7 +63,7 @@ public class EarthQuakeDao extends DBDao
         {
             eq = new EarthQuake();
             eq.setID(rs.getInt("ID"));
-            eq.setOT(new java.util.Date(rs.getDate("OT").getTime()));
+            eq.setOT(rs.getTimestamp("OT").toLocalDateTime());
             eq.setLATITUDE(rs.getDouble("LATITUDE"));
             eq.setLONGITUDE(rs.getDouble("LONGITUDE"));
             eq.setDEPTH(rs.getDouble("DEPTH"));
@@ -84,7 +85,7 @@ public class EarthQuakeDao extends DBDao
         {
             eq = new EarthQuake();
             eq.setID(rs.getInt("ID"));
-            eq.setOT(new java.util.Date(rs.getDate("OT").getTime()));
+            eq.setOT(rs.getTimestamp("OT").toLocalDateTime());
             eq.setLATITUDE(rs.getDouble("LATITUDE"));
             eq.setLONGITUDE(rs.getDouble("LONGITUDE"));
             eq.setDEPTH(rs.getDouble("DEPTH"));
@@ -105,11 +106,10 @@ public class EarthQuakeDao extends DBDao
             String[] item = line.split(",");
             String[] Stime = item[1].split("\\D");
             int[] Dt = new int[Stime.length];
-            int i = 0;
-            for (String s : Stime)
-                Dt[i++] = Integer.parseInt(s);
+            for (int i = 0; i < Stime.length; i++)
+                Dt[i] = Integer.parseInt(Stime[i]);
             eq.setID(Integer.parseInt(item[0]));
-            eq.setOT(new java.util.Date(Dt[0] - 1900,Dt[1] - 1,Dt[2],Dt[3],Dt[4],Dt[5]));
+            eq.setOT(LocalDateTime.of(Dt[0], Dt[1] ,Dt[2], Dt[3], Dt[4], Dt[5]));
             eq.setLATITUDE(Double.parseDouble(item[2]));
             eq.setLONGITUDE(Double.parseDouble(item[3]));
             eq.setDEPTH(Double.parseDouble(item[4]));

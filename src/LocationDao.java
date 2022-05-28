@@ -89,7 +89,7 @@ public class LocationDao extends DBDao
             String[] item = line.split(",");
             l.setREGION(item[0]);
             l.setCOUNTRY(item[1]);
-            l.setFULLNAME(item[3]);
+            l.setFULLNAME(item[2]);
             add(l);
         }
     }

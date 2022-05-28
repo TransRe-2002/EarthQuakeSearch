@@ -1322,7 +1322,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <Position>1</Position>
     </column>
     <column id="351" parent="339" name="COUNTRY">
-      <DataType>char(10)|0s</DataType>
+      <DataType>char(20)|0s</DataType>
       <Position>2</Position>
     </column>
     <column id="352" parent="339" name="FULLNAME">
