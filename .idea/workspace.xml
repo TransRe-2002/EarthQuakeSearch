@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a33c7840-75ff-4a59-9a8c-ece6f48819b1" name="变更" comment="无">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EarthQuakeSearch.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mariadb-java-client-3.0.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DBDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EarthQuake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EarthQuakeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Loacation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LocationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchDao.java" afterDir="false" />
+    <list default="true" id="a33c7840-75ff-4a59-9a8c-ece6f48819b1" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,8 +119,23 @@
       <workItem from="1653569471471" duration="7082000" />
       <workItem from="1653609623688" duration="2608000" />
       <workItem from="1653665073408" duration="599000" />
-      <workItem from="1653696165465" duration="8785000" />
+      <workItem from="1653696165465" duration="9091000" />
     </task>
+    <task id="LOCAL-00001" summary="无">
+      <created>1653706382103</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653706382103</updated>
+    </task>
+    <task id="LOCAL-00002" summary="无">
+      <created>1653706644667</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653706644667</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
