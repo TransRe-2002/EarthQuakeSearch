@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-221.5591.52">
-    <data-source name="Earthquake@localhost" uuid="3eff1889-0ae7-432b-a7fb-a35847b07574">
-      <database-info product="MariaDB" version="10.7.4-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.7.3" dbms="MARIADB" exact-version="10.7.4" exact-driver-version="2.7">
+  <component name="dataSourceStorageLocal" created-in="IU-222.3345.118">
+    <data-source name="EARTHQUAKE@localhost" uuid="3eff1889-0ae7-432b-a7fb-a35847b07574">
+      <database-info product="MariaDB" version="10.8.3-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.7.3" dbms="MARIADB" exact-version="10.8.3" exact-driver-version="2.7">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>

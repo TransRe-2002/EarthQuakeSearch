@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SearchDao extends DBDao
 {
-    public static List<EarthQuake> byRegion1(String REGION) throws SQLException
+    public static List<EarthQuake> byRegion(String REGION) throws SQLException
     {
         PreparedStatement pS = getConnection().prepareStatement("SELECT * FROM EARTHQUAKE WHERE REGION = ?");
         pS.setString(1,REGION);
