@@ -3,6 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Web extends SearchDao {
         String input = null;
         Handler t = null;
 
-        List<EarthQuake> eql = null;
+        ArrayList<EarthQuake> eql = null;
         while (eql == null) {
             System.out.println
                     (
@@ -20,7 +21,7 @@ public class Web extends SearchDao {
                                     "1.地区查询\n" +
                                     "2.国家查询\n" +
                                     "3.日期查询\n" +
-                                    "4.经纬度查询\n"
+                                    "4.经纬度查询"
                     );
             choose = Integer.parseInt(reader.readLine());
             switch (choose) {
@@ -59,7 +60,8 @@ public class Web extends SearchDao {
         System.out.println("结果请在8080端口查看。");
         ServerSocket ss = new ServerSocket(8080);
         System.out.println("server is running...");
-        for (; ; ) {
+        for (; ; )
+        {
             Socket sock = ss.accept();
             System.out.println("connected from " + sock.getRemoteSocketAddress());
             t = new Handler(sock);
@@ -71,13 +73,13 @@ public class Web extends SearchDao {
 
 class Handler extends Thread {
     Socket sock;
-    List<EarthQuake> eql;
+    ArrayList<EarthQuake> eql;
 
     public Handler(Socket sock) {
         this.sock = sock;
     }
 
-    public void setEql(List<EarthQuake> eql)
+    public void setEql(ArrayList<EarthQuake> eql)
     {
         this.eql = eql;
     }
@@ -119,11 +121,10 @@ class Handler extends Thread {
             writer.write("\r\n");
             writer.flush();
         } else {
-            var eql = EarthQuakeDao.quary();
-            var eqi = eql.iterator();
+            var eql = new ArrayList<EarthQuake>(this.eql);
+            Iterator<EarthQuake> eqi = eql.iterator();
             StringBuilder eqls = new StringBuilder();
-            eqls.append("ID\t\t地震时间\t\t纬度\t\t" +
-                    "经度\t\t震源深度\t\t震级\t\t地区\t\t").append("<br>");
+            eqls.append("OT            LATITUDE          LONGITUDE            DEPTH            MAGNITUDE            REGION").append("<br>");
             while (eqi.hasNext()) {
                 eqls.append(eqi.next().toString()).append("<br>");
             }

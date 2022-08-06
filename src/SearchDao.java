@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SearchDao extends DBDao
 {
-    public static List<EarthQuake> byRegion(String REGION) throws SQLException
+    public static ArrayList<EarthQuake> byRegion(String REGION) throws SQLException
     {
         PreparedStatement pS = getConnection().prepareStatement("SELECT * FROM EARTHQUAKE WHERE REGION = ?");
         pS.setString(1,REGION);
@@ -29,7 +29,7 @@ public class SearchDao extends DBDao
         return Leq;
     }
 
-    public static List<EarthQuake> byCountry(String COUNTRY) throws SQLException
+    public static ArrayList<EarthQuake> byCountry(String COUNTRY) throws SQLException
     {
         PreparedStatement pS = getConnection().prepareStatement("SELECT * FROM EARTHQUAKE,LOCATION WHERE EARTHQUAKE.REGION = LOCATION.REGION AND LOCATION.COUNTRY = ?");
         pS.setString(1,COUNTRY);
@@ -52,7 +52,7 @@ public class SearchDao extends DBDao
         return Leq;
     }
 
-    public static List<EarthQuake> byDate(int year, int month, int day) throws SQLException
+    public static ArrayList<EarthQuake> byDate(int year, int month, int day) throws SQLException
     {
         PreparedStatement pS = getConnection().prepareStatement
                 (
@@ -81,7 +81,7 @@ public class SearchDao extends DBDao
         return Leq;
     }
 
-    public static List<EarthQuake> byCoordinate(double LATITUDE, double LONGITUDE) throws SQLException
+    public static ArrayList<EarthQuake> byCoordinate(double LATITUDE, double LONGITUDE) throws SQLException
     {
         PreparedStatement pS = getConnection().prepareStatement("SELECT * FROM EARTHQUAKE WHERE LATITUDE = ROUND(?,6) AND LONGITUDE = ROUND(?,7)");
         pS.setDouble(1,LATITUDE);

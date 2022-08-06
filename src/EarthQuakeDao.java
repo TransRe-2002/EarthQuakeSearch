@@ -53,7 +53,7 @@ public class EarthQuakeDao extends DBDao
         pS.execute();
     }
 
-    public static List<EarthQuake> quary() throws SQLException
+    public static ArrayList<EarthQuake> quary() throws SQLException
     {
         Statement s = getConnection().createStatement();
         ResultSet rs = s.executeQuery("SELECT * FROM EARTHQUAKE");
